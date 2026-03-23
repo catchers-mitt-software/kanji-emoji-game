@@ -4,8 +4,8 @@ WORK IN PROGRESS
 
 Like those matching games, but matching "cognates" rather than two instances of 
 the same thing, with kanji and emoji. For example, rather than matching 
-'&#x5C71' and '&#x5C71', or '&#x1F3D4' and '&#x1F3D4', this game will be 
-matching '&#x5C71' and '&#x1F3D4'.
+'&#x5C71;' and '&#x5C71;', or '&#x1F3D4;' and '&#x1F3D4;', this game will be 
+matching '&#x5C71;' and '&#x1F3D4;'.
 
 The following below the line is from the Kotlin Multiplatform quickstart.
 
