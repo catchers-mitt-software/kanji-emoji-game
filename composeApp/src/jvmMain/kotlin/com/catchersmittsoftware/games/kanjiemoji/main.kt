@@ -8,6 +8,6 @@ fun main() = application {
         onCloseRequest = ::exitApplication,
         title = "kanjiemojigame",
     ) {
-        _root_ide_package_.com.catchersmittsoftware.kanjiemojigame.App()
+        _root_ide_package_.com.catchersmittsoftware.games.kanjiemoji.App()
     }
 }

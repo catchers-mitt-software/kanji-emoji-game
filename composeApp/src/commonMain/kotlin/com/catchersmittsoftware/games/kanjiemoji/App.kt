@@ -1,4 +1,4 @@
-package com.catchersmittsoftware.kanjiemojigame
+package com.catchersmittsoftware.games.kanjiemoji
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.Image
@@ -35,7 +35,7 @@ fun App() {
                 Text("Click me!")
             }
             AnimatedVisibility(showContent) {
-                val greeting = remember { _root_ide_package_.com.catchersmittsoftware.kanjiemojigame.Greeting().greet() }
+                val greeting = remember { _root_ide_package_.com.catchersmittsoftware.games.kanjiemoji.Greeting().greet() }
                 Column(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalAlignment = Alignment.CenterHorizontally,
