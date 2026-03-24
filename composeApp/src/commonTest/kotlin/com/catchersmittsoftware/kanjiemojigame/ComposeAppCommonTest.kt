@@ -1,4 +1,4 @@
-package com.gettsmartapp.kanjiemojigame
+package com.catchersmittsoftware.kanjiemojigame
 
 import kotlin.test.Test
 import kotlin.test.assertEquals
