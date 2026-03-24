@@ -13,7 +13,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         setContent {
-            _root_ide_package_.com.catchersmittsoftware.kanjiemojigame.App()
+            App()
         }
     }
 }
@@ -21,5 +21,5 @@ class MainActivity : ComponentActivity() {
 @Preview
 @Composable
 fun AppAndroidPreview() {
-    _root_ide_package_.com.catchersmittsoftware.kanjiemojigame.App()
+    App()
 }
