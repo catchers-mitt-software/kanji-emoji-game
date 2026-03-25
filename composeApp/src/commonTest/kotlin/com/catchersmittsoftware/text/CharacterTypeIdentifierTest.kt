@@ -1,4 +1,4 @@
-package com.catchersmittsoftware
+package com.catchersmittsoftware.text
 
 import com.catchersmittsoftware.text.isCJKIdeographic
 
