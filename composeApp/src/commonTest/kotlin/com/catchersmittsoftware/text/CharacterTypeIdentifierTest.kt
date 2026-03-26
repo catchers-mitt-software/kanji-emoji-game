@@ -56,4 +56,11 @@ class CharacterTypeIdentifierTest {
         assertFalse(isCJKIdeographic(ch), message)
     }
 
+    @Test
+    fun testCompatHangulAreNotCJKIdeographic() {
+        val ch: Char = ('\u3131'..'\u318E').random()
+        val message = "Character $ch should not be CJK ideograph"
+        assertFalse(isCJKIdeographic(ch), message)
+    }
+
 }
