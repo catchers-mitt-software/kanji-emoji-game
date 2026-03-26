@@ -65,4 +65,11 @@ class CharacterTypeIdentifierTest {
 
     // TODO: Determine if kanbun should be treated as kanji or not
 
+    @Test
+    fun testBopomofoExtendedAreNotCJKIdeographic() {
+        val ch: Char = ('\u31A0'..'\u31BF').random()
+        val message = "Character $ch should not be CJK ideograph"
+        assertFalse(isCJKIdeographic(ch), message)
+    }
+
 }
