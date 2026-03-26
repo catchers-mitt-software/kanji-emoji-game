@@ -63,4 +63,6 @@ class CharacterTypeIdentifierTest {
         assertFalse(isCJKIdeographic(ch), message)
     }
 
+    // TODO: Determine if kanbun should be treated as kanji or not
+
 }
