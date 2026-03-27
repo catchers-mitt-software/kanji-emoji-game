@@ -86,4 +86,11 @@ class CharacterTypeIdentifierTest {
         assertFalse(isCJKIdeographic(ch), message)
     }
 
+    @Test
+    fun testParenthesizedKanjiAreCJKIdeographic() {
+        val ch: Char = ('\u3220'..'\u3243').random()
+        val message = "Character $ch should be CJK ideograph"
+        assertTrue(isCJKIdeographic(ch), message)
+    }
+
 }
