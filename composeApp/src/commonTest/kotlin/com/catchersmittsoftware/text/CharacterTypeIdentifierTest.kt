@@ -72,4 +72,11 @@ class CharacterTypeIdentifierTest {
         assertFalse(isCJKIdeographic(ch), message)
     }
 
+    @Test
+    fun testKatakanaPhoneticExtensionsAreNotCJKIdeographic() {
+        val ch: Char = ('\u31F0'..'\u31FF').random()
+        val message = "Character $ch should not be CJK ideograph"
+        assertFalse(isCJKIdeographic(ch), message)
+    }
+
 }
