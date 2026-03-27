@@ -100,4 +100,11 @@ class CharacterTypeIdentifierTest {
         assertTrue(isCJKIdeographic(ch), message)
     }
 
+    @Test
+    fun testCircledNumbersOnBlackSquaresAreNotCJKIdeographic() {
+        val ch: Char = ('\u3248'..'\u324F').random()
+        val message = "Character $ch should not be CJK ideograph"
+        assertFalse(isCJKIdeographic(ch), message)
+    }
+
 }
