@@ -1,10 +1,10 @@
 package com.catchersmittsoftware.text
 
 fun isCJKIdeographic(ch: Char): Boolean {
-    if (ch in '\u3220'..'\u3247') {
-        return true
+    return if (ch in '\u3220'..'\u3247') {
+        true
     } else {
-        return ch > '\u327B'
+        ch > '\u327B'
     }
 }
 
