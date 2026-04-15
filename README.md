@@ -7,7 +7,9 @@ the same thing, with kanji and emoji. For example, rather than matching
 '&#x5C71;' and '&#x5C71;', or '&#x1F3D4;' and '&#x1F3D4;', this game will be 
 matching '&#x5C71;' and '&#x1F3D4;'.
 
-The early levels will involve (FINISH WRITING)
+The early levels will involve pairs that are very obvious, like '&#x8033;' and 
+'&#x1FF42;', and only a few pairs total in those levels. The later levels will 
+be pairs that are less obvious, and more of them. 
 
 I have thought a little bit about scoring, but not in much detail.
 
