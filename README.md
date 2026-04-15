@@ -7,6 +7,10 @@ the same thing, with kanji and emoji. For example, rather than matching
 '&#x5C71;' and '&#x5C71;', or '&#x1F3D4;' and '&#x1F3D4;', this game will be 
 matching '&#x5C71;' and '&#x1F3D4;'.
 
+The early levels will involve (FINISH WRITING)
+
+I have thought a little bit about scoring, but not in much detail.
+
 The following below the line is from the Kotlin Multiplatform quickstart.
 
 ----
