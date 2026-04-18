@@ -11,7 +11,10 @@ The early levels will involve pairs that are very obvious, like '&#x8033;' and
 '&#x1F442;', and only a few pairs total in those levels. The later levels will 
 be pairs that are less obvious, and more of them. 
 
-I have thought a little bit about scoring, but not in much detail.
+I have thought a little bit about scoring, but not in much detail. Like maybe it 
+correlates speed and accuracy somehow. Being quick and accurate scores well, 
+being quick but with frequent mistakes scores about the same as accurate but 
+slow, and being slow with frequent mistakes scores poorly. Something like that.
 
 The following below the line is from the Kotlin Multiplatform quickstart.
 
