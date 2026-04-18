@@ -11,6 +11,9 @@ The early levels will involve pairs that are very obvious, like '&#x8033;' and
 '&#x1F442;', and only a few pairs total in those levels. The later levels will 
 be pairs that are less obvious, and more of them. 
 
+Maybe there's also some kind of readout at the bottom of the screen that reads, 
+for example, "mountain" for '&#x1F3D4;' and "&#x3084;&#x307E;" for '&#x5C71;'. 
+
 I have thought a little bit about scoring, but not in much detail. Like maybe it 
 correlates speed and accuracy somehow. Being quick and accurate scores well, 
 being quick but with frequent mistakes scores about the same as accurate but 
