@@ -17,3 +17,11 @@ captures
 !*.xcworkspace/contents.xcworkspacedata
 **/xcshareddata/WorkspaceSettings.xcsettings
 node_modules/
+
+# Miscellaneous
+localdevicenotes.txt
+scratchpad.md
+scratchpad.txt
+tempnotes.html
+tempnotes.md
+tempnotes.txt
