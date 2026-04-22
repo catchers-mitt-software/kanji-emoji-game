@@ -18,6 +18,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.catchersmittsoftware.games.kanjiemoji.ui.theme.theme.ThemeMode
 import com.catchersmittsoftware.games.kanjiemoji.ui.theme.theme.KanjiAppTheme
 import kanjiemojigame.composeapp.generated.resources.Res
 import kanjiemojigame.composeapp.generated.resources.compose_multiplatform
@@ -26,11 +27,9 @@ import org.jetbrains.compose.resources.painterResource
 @Composable
 @Preview
 fun App() {
-    val isDarkMode =
-        true // Load (flow) from your settings/preferences, or use isSystemInDarkTheme() to follow the system setting
-//    val isDarkMode = isSystemInDarkTheme()
+    var themeMode by remember { mutableStateOf(ThemeMode.SYSTEM) } // Or, listen from the preferences or your data store
 
-    KanjiAppTheme(isDarkMode = isDarkMode) {
+    KanjiAppTheme(themeMode = themeMode) {
         var showContent by remember { mutableStateOf(false) }
         Column(
             modifier = Modifier
@@ -39,6 +38,9 @@ fun App() {
                 .fillMaxSize(),
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
+            Button(onClick = { themeMode = themeMode.next() }) {
+                Text("Theme: ${themeMode.label}")
+            }
             Button(onClick = { showContent = !showContent }) {
                 Text("Click me!")
             }

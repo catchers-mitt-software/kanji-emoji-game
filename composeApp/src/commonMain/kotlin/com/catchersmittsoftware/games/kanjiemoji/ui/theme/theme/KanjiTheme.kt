@@ -1,6 +1,7 @@
 package com.catchersmittsoftware.games.kanjiemoji.ui.theme.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Shapes
 import androidx.compose.material3.Typography
@@ -237,8 +238,20 @@ private val highContrastDarkColorScheme = darkColorScheme(
     surfaceContainerHighest = surfaceContainerHighestDarkHighContrast,
 )
 
-enum class ThemeMode(name: String) {
-    LIGHT(name = "Light"), DARK(name = "Dark"), SYSTEM(name = "System")
+enum class ThemeMode(val label: String) {
+    LIGHT(label = "Light"), DARK(label = "Dark"), SYSTEM(label = "System");
+
+    fun next(): ThemeMode = when (this) {
+        LIGHT -> DARK
+        DARK -> SYSTEM
+        SYSTEM -> LIGHT
+    }
+
+    fun isDarkMode(systemDarkMode: Boolean): Boolean = when (this) {
+        LIGHT -> false
+        DARK -> true
+        SYSTEM -> systemDarkMode
+    }
 }
 
 private fun getShapes(): Shapes = Shapes(
@@ -253,9 +266,10 @@ private fun getTypography(): Typography = Typography()
 
 @Composable
 fun KanjiAppTheme(
-    isDarkMode: Boolean, content: @Composable () -> Unit
+    themeMode: ThemeMode,
+    content: @Composable () -> Unit
 ) {
-    val colorScheme = if (isDarkMode) darkScheme else lightScheme
+    val colorScheme = if (themeMode.isDarkMode(isSystemInDarkTheme())) darkScheme else lightScheme
 
     MaterialTheme(
         colorScheme = colorScheme,
