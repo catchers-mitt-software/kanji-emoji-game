@@ -19,6 +19,8 @@ correlates speed and accuracy somehow. Being quick and accurate scores well,
 being quick but with frequent mistakes scores about the same as accurate but 
 slow, and being slow with frequent mistakes scores poorly. Something like that.
 
+Many thanks to Shiva Thapa for his help with the app's colors in the theme.
+
 The following below the line is from the Kotlin Multiplatform quickstart.
 
 ----
