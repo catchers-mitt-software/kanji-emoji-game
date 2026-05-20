@@ -9,7 +9,7 @@ import kotlin.test.assertTrue
 class WideCharTest {
 
     fun pickNonBMPCodepoint(): Int {
-        return Random.nextInt(0x17000, 0x187FF)
+        return Random.nextInt(0x17000, 0x18CD5)
     }
 
 }
