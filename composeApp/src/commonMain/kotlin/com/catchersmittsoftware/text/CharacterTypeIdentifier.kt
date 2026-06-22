@@ -8,4 +8,11 @@ fun isCJKIdeographic(ch: Char): Boolean {
     }
 }
 
+// TODO: Write tests for this
+fun isCJKIdeographic(ch: WideChar): Boolean = false
+
+// TODO: Write tests for this
 fun isEmoji(ch: Char): Boolean = false
+
+// TODO: Write tests for this
+fun isEmoji(ch: WideChar): Boolean = false
