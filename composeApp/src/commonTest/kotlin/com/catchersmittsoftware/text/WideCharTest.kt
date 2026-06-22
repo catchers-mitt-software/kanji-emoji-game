@@ -6,11 +6,11 @@ import kotlin.test.assertEquals
 
 class WideCharTest {
 
-    fun pickBMPKanji(): Char {
+    private fun pickBMPKanji(): Char {
         return Random.nextInt(0x4E00, 0xA000).toChar()
     }
 
-    fun pickNonBMPCodepoint(): Int {
+    private fun pickNonBMPCodepoint(): Int {
         return Random.nextInt(0x17000, 0x18CD5)
     }
 
