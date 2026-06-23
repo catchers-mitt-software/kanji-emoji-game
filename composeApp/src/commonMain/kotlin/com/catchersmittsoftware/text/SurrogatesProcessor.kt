@@ -3,6 +3,16 @@ package com.catchersmittsoftware.text
 object SurrogatesProcessor {
 
     // TODO: Write tests for this
+    const val MINIMUM_HIGH_SURROGATE = '?'
+
+    // TODO: Write tests for this
+    const val MINIMUM_LOW_SURROGATE = '?'
+
+    // TODO: Write tests for this
+    const val MINIMUM_SUPPLEMENTARY = '?'
+
+    // TODO: Write tests for this
+    // TODO: Write tests for this
     fun assembleFromSurrogates(pair: Pair<Char, Char>): WideChar {
         return WideChar(0x10002)
     }
