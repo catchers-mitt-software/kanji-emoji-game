@@ -5,4 +5,16 @@ import kotlin.test.Test
 import kotlin.test.assertEquals
 
 class SurrogatesProcessorTest {
+
+    private fun chooseHighSurrogate(): Char {
+        return if (Random.nextBoolean()) {
+            0xD83C.toChar()
+        } else {
+            0xD83D.toChar()
+        }
+    }
+
+    private fun chooseLowSurrogate(): Char =
+        Random.nextInt(0xDE00, 0xDF00).toChar()
+
 }
