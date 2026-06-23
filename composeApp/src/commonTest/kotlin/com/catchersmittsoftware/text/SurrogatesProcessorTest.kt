@@ -17,4 +17,11 @@ class SurrogatesProcessorTest {
     private fun chooseLowSurrogate(): Char =
         Random.nextInt(0xDE00, 0xDF00).toChar()
 
+    @Test
+    fun testMinimumHighSurrogateConstant() {
+        val expected = '\uD800'
+        val actual = SurrogatesProcessor.MINIMUM_HIGH_SURROGATE
+        assertEquals(expected, actual)
+    }
+
 }
