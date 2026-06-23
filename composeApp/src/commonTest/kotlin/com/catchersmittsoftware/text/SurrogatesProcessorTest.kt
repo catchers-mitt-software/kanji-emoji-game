@@ -31,4 +31,11 @@ class SurrogatesProcessorTest {
         assertEquals(expected, actual)
     }
 
+    @Test
+    fun testMinimumSupplementaryConstant() {
+        val expected = 0x10000
+        val actual = SurrogatesProcessor.MINIMUM_SUPPLEMENTARY
+        assertEquals(expected, actual)
+    }
+
 }
