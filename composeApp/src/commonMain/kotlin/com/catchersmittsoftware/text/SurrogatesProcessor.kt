@@ -9,14 +9,13 @@ object SurrogatesProcessor {
     const val MINIMUM_SUPPLEMENTARY = 65536
 
     // TODO: Write tests for this
-    // TODO: Write tests for this
-    fun assembleFromSurrogates(pair: Pair<Char, Char>): WideChar {
-        return WideChar(0x10002)
+    fun breakIntoSurrogates(codePoint: Int): Pair<Char, Char> {
+        return Pair('?', 'X')
     }
 
     // TODO: Write tests for this
-    fun breakIntoSurrogates(codePoint: Int): Pair<Char, Char> {
-        return Pair('?', 'X')
+    fun assembleFromSurrogates(pair: Pair<Char, Char>): WideChar {
+        return WideChar(0x10002)
     }
 
 }
