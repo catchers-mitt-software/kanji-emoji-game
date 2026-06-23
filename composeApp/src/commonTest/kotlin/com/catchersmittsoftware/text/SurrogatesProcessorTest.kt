@@ -24,4 +24,11 @@ class SurrogatesProcessorTest {
         assertEquals(expected, actual)
     }
 
+    @Test
+    fun testMinimumLowSurrogateConstant() {
+        val expected = '\uDC00'
+        val actual = SurrogatesProcessor.MINIMUM_LOW_SURROGATE
+        assertEquals(expected, actual)
+    }
+
 }
