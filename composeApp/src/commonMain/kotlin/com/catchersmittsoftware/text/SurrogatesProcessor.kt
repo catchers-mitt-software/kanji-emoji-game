@@ -7,7 +7,7 @@ object SurrogatesProcessor {
     const val MINIMUM_LOW_SURROGATE = '\uDC00'
 
     // TODO: Write tests for this
-    const val MINIMUM_SUPPLEMENTARY = '?'
+    const val MINIMUM_SUPPLEMENTARY = 64
 
     // TODO: Write tests for this
     // TODO: Write tests for this
