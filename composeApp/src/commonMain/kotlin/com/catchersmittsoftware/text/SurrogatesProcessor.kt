@@ -2,8 +2,7 @@ package com.catchersmittsoftware.text
 
 object SurrogatesProcessor {
 
-    // TODO: Write tests for this
-    const val MINIMUM_HIGH_SURROGATE = '?'
+    const val MINIMUM_HIGH_SURROGATE = '\uD800'
 
     // TODO: Write tests for this
     const val MINIMUM_LOW_SURROGATE = '?'
