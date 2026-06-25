@@ -11,6 +11,9 @@ object SurrogatesProcessor {
     const val SHIFTED_MIN_SUPP = 64
 
     // TODO: Write tests for this
+    const val HIGH_SURROGATE_ADJUST = -64
+
+    // TODO: Write tests for this
     fun highSurrogate(codePoint: Int): Char = 'H'
 
     // TODO: Write tests for this
