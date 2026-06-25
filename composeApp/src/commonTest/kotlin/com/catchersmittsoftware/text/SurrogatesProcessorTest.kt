@@ -52,4 +52,11 @@ class SurrogatesProcessorTest {
         assertEquals(expected, actual)
     }
 
+    @Test
+    fun testLowSurrogateMaskConstant() {
+        val expected = 0x3FF
+        val actual = SurrogatesProcessor.LOW_SURROGATE_MASK
+        assertEquals(expected, actual)
+    }
+
 }
