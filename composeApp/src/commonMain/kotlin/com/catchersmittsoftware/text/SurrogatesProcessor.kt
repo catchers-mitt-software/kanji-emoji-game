@@ -14,8 +14,8 @@ object SurrogatesProcessor {
 
     const val LOW_SURROGATE_MASK = 1023
 
-    // TODO: Write tests for this
-    fun highSurrogate(codePoint: Int): Char = 'H'
+    fun highSurrogate(codePoint: Int): Char =
+        ((codePoint ushr 10) + 55232).toChar()
 
     // TODO: Write tests for this
     fun lowSurrogate(codePoint: Int): Char = 'L'
