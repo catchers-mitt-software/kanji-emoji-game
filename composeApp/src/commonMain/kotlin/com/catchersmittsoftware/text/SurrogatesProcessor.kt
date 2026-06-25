@@ -8,7 +8,7 @@ object SurrogatesProcessor {
 
     const val MINIMUM_SUPPLEMENTARY = 65536
 
-    const val SHIFTED_MIN_SUPP = MINIMUM_SUPPLEMENTARY ushr 10
+    const val SHIFTED_MIN_SUPP = MINIMUM_SUPPLEMENTARY shr 10
 
     // TODO: Write tests for this
     fun highSurrogate(codePoint: Int): Char = 'H'
