@@ -45,4 +45,11 @@ class SurrogatesProcessorTest {
         assertEquals(expected, actual)
     }
 
+    @Test
+    fun testHighSurrogateAdjustConstant() {
+        val expected = 0xD7C0
+        val actual = SurrogatesProcessor.HIGH_SURROGATE_ADJUST
+        assertEquals(expected, actual)
+    }
+
 }
