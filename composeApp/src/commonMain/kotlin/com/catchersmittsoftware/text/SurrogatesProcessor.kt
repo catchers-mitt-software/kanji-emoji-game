@@ -9,6 +9,12 @@ object SurrogatesProcessor {
     const val MINIMUM_SUPPLEMENTARY = 65536
 
     // TODO: Write tests for this
+    fun highSurrogate(codePoint: Int): Char = 'H'
+
+    // TODO: Write tests for this
+    fun lowSurrogate(codePoint: Int): Char = 'L'
+
+    // TODO: Write tests for this
     fun breakIntoSurrogates(codePoint: Int): Pair<Char, Char> {
         return Pair('?', 'X')
     }
