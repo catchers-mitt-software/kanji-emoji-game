@@ -71,4 +71,17 @@ class SurrogatesProcessorTest {
         assertEquals(expected, actual)
     }
 
+    @Test
+    fun testHighSurrogate() {
+        val codePoint = chooseNonBMPCodePoint()
+        val expected = reckonHighSurrogate(codePoint)
+        val actual = SurrogatesProcessor.highSurrogate(codePoint)
+        val low = reckonLowSurrogate(codePoint)
+        val surrogates = charArrayOf(expected, low)
+        val emoji = surrogates.concatToString()
+        val hexString = "U+${expected.code.toString(16)}"
+        val message = "Reckoning high surrogate for $emoji, $hexString"
+        assertEquals(expected, actual, message)
+    }
+
 }
