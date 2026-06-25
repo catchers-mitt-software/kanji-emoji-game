@@ -6,6 +6,8 @@ import kotlin.test.assertEquals
 
 class SurrogatesProcessorTest {
 
+    private fun chooseNonBMPCodePoint(): Int = Random.nextInt(0x1F300, 0x1FBFA)
+
     private fun chooseHighSurrogate(): Char {
         return if (Random.nextBoolean()) {
             0xD83C.toChar()
@@ -16,6 +18,16 @@ class SurrogatesProcessorTest {
 
     private fun chooseLowSurrogate(): Char =
         Random.nextInt(0xDE00, 0xDF00).toChar()
+
+    private fun reckonHighSurrogate(codePoint: Int): Char {
+        val shifted = codePoint ushr 10
+        return (0xD7C0 + shifted).toChar()
+    }
+
+    private fun reckonLowSurrogate(codePoint: Int): Char {
+        val masked = codePoint and 0x3FF
+        return (0xDC00 + masked).toChar()
+    }
 
     @Test
     fun testMinimumHighSurrogateConstant() {
