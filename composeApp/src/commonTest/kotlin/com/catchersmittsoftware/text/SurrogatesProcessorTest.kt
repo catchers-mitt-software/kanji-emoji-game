@@ -8,13 +8,7 @@ class SurrogatesProcessorTest {
 
     private fun chooseNonBMPCodePoint(): Int = Random.nextInt(0x1F300, 0x1FBFA)
 
-    private fun chooseHighSurrogate(): Char {
-        return if (Random.nextBoolean()) {
-            0xD83C.toChar()
-        } else {
-            0xD83D.toChar()
-        }
-    }
+    private fun chooseHighSurrogate(): Char = Random.nextInt(0xD83C, 0xD83F).toChar()
 
     private fun chooseLowSurrogate(): Char =
         Random.nextInt(0xDE00, 0xDF00).toChar()
