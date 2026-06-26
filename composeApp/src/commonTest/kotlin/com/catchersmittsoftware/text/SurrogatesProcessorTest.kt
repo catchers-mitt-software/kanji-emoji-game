@@ -8,7 +8,8 @@ class SurrogatesProcessorTest {
 
     private fun chooseNonBMPCodePoint(): Int = Random.nextInt(0x1F300, 0x1FBFA)
 
-    private fun chooseHighSurrogate(): Char = Random.nextInt(0xD83C, 0xD83F).toChar()
+    private fun chooseHighSurrogate(): Char =
+        Random.nextInt(0xD83C, 0xD83F).toChar()
 
     private fun chooseLowSurrogate(): Char =
         Random.nextInt(0xDE00, 0xDF00).toChar()
@@ -75,6 +76,19 @@ class SurrogatesProcessorTest {
         val emoji = surrogates.concatToString()
         val hexString = "U+${expected.code.toString(16)}"
         val message = "Reckoning high surrogate for $emoji, $hexString"
+        assertEquals(expected, actual, message)
+    }
+
+    @Test
+    fun testLowSurrogate() {
+        val codePoint = chooseNonBMPCodePoint()
+        val expected = reckonLowSurrogate(codePoint)
+        val actual = SurrogatesProcessor.lowSurrogate(codePoint)
+        val high = reckonHighSurrogate(codePoint)
+        val surrogates = charArrayOf(high, expected)
+        val emoji = surrogates.concatToString()
+        val hexString = "U+${expected.code.toString(16)}"
+        val message = "Reckoning low surrogate for $emoji, $hexString"
         assertEquals(expected, actual, message)
     }
 
