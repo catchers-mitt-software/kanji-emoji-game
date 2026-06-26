@@ -18,7 +18,7 @@ object SurrogatesProcessor {
         ((codePoint shr 10) + HIGH_SURROGATE_ADJUST).toChar()
 
     fun lowSurrogate(codePoint: Int): Char =
-        ((codePoint and 1023) + 56320).toChar()
+        (MINIMUM_LOW_SURROGATE + (codePoint and LOW_SURROGATE_MASK))
 
     // TODO: Write tests for this
     fun breakIntoSurrogates(codePoint: Int): Pair<Char, Char> {
