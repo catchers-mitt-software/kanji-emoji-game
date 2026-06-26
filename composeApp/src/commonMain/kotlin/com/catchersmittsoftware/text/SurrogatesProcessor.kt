@@ -17,8 +17,8 @@ object SurrogatesProcessor {
     fun highSurrogate(codePoint: Int): Char =
         ((codePoint shr 10) + HIGH_SURROGATE_ADJUST).toChar()
 
-    // TODO: Write tests for this
-    fun lowSurrogate(codePoint: Int): Char = 'L'
+    fun lowSurrogate(codePoint: Int): Char =
+        ((codePoint and 1023) + 56320).toChar()
 
     // TODO: Write tests for this
     fun breakIntoSurrogates(codePoint: Int): Pair<Char, Char> {
