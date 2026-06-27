@@ -8,8 +8,6 @@ object SurrogatesProcessor {
 
     const val MINIMUM_SUPPLEMENTARY = 65536
 
-    const val SHIFTED_MIN_SUPP = 64
-
     const val HIGH_SURROGATE_ADJUST = 55232
 
     const val LOW_SURROGATE_MASK = 1023

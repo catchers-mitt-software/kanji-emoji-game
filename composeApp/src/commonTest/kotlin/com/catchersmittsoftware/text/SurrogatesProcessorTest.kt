@@ -46,13 +46,6 @@ class SurrogatesProcessorTest {
     }
 
     @Test
-    fun testShiftedMinimumSupplementaryConstant() {
-        val expected = 0x10000 ushr 10
-        val actual = SurrogatesProcessor.SHIFTED_MIN_SUPP
-        assertEquals(expected, actual)
-    }
-
-    @Test
     fun testHighSurrogateAdjustConstant() {
         val expected = 0xD7C0
         val actual = SurrogatesProcessor.HIGH_SURROGATE_ADJUST
