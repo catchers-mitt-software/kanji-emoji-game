@@ -18,9 +18,10 @@ object SurrogatesProcessor {
     fun lowSurrogate(codePoint: Int): Char =
         (MINIMUM_LOW_SURROGATE + (codePoint and LOW_SURROGATE_MASK))
 
-    // TODO: Write tests for this
     fun breakIntoSurrogates(codePoint: Int): Pair<Char, Char> {
-        return Pair('?', 'X')
+        val high = this.highSurrogate(codePoint)
+        val low = this.lowSurrogate(codePoint)
+        return Pair(high, low)
     }
 
     // TODO: Write tests for this
