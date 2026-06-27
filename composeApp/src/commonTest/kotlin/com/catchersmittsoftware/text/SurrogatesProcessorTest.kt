@@ -85,4 +85,16 @@ class SurrogatesProcessorTest {
         assertEquals(expected, actual, message)
     }
 
+    @Test
+    fun testBreakIntoSurrogates() {
+        val codePoint = chooseNonBMPCodePoint()
+        val high = reckonHighSurrogate(codePoint)
+        val low = reckonLowSurrogate(codePoint)
+        val expected = Pair(high, low)
+        val actual = SurrogatesProcessor.breakIntoSurrogates(codePoint)
+        val message =
+            "Breaking ${charArrayOf(high, low).concatToString()} to surrogates"
+        assertEquals(expected, actual, message)
+    }
+
 }
