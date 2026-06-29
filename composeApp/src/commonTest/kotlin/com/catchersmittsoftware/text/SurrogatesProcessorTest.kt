@@ -97,4 +97,17 @@ class SurrogatesProcessorTest {
         assertEquals(expected, actual, message)
     }
 
+    @Test
+    fun testReckonCodePoint() {
+        val expected = chooseNonBMPCodePoint()
+        val high = reckonHighSurrogate(expected)
+        val low = reckonLowSurrogate(expected)
+        val pair = Pair(high, low)
+        val actual = SurrogatesProcessor.reckonCodePoint(pair)
+        val charStr = charArrayOf(high, low).concatToString()
+        val message =
+            "Codepoint for $charStr should be U+${expected.toString(16)}"
+        assertEquals(expected, actual, message)
+    }
+
 }
