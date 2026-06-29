@@ -39,4 +39,16 @@ class WideCharTest {
         assertEquals(expected, actual)
     }
 
+    @Test
+    fun testToStringSecondAuxConstructor() {
+        val codePoint = pickNonBMPCodepoint()
+        val high = SurrogatesProcessor.highSurrogate(codePoint)
+        val low = SurrogatesProcessor.lowSurrogate(codePoint)
+        val pair = Pair(high, low)
+        val instance = WideChar(pair)
+        val expected = convertToSurrogatePairString(codePoint)
+        val actual = instance.toString()
+        assertEquals(expected, actual)
+    }
+
 }
