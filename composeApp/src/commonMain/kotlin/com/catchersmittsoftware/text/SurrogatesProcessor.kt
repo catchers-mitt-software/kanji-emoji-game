@@ -25,6 +25,11 @@ object SurrogatesProcessor {
     }
 
     // TODO: Write tests for this
+    fun reckonCodePoint(pair: Pair<Char, Char>): Int {
+        return -1
+    }
+
+    // TODO: Write tests for this
     fun assembleFromSurrogates(pair: Pair<Char, Char>): WideChar {
         return WideChar(0x10002)
     }
