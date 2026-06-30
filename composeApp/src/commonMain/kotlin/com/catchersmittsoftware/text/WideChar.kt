@@ -15,7 +15,7 @@ class WideChar(val codePoint: Int) {
     }
 
     override fun equals(other: Any?): Boolean {
-        return other != null
+        return other is WideChar
     }
 
     // TODO: Write tests for this
