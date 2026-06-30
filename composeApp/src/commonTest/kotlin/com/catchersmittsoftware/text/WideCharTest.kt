@@ -3,6 +3,8 @@ package com.catchersmittsoftware.text
 import kotlin.random.Random
 import kotlin.test.Test
 import kotlin.test.assertEquals
+import kotlin.test.assertFalse
+import kotlin.test.assertNotEquals
 
 class WideCharTest {
 
@@ -56,6 +58,14 @@ class WideCharTest {
         val codePoint = pickNonBMPCodepoint()
         val instance = WideChar(codePoint)
         assertEquals(instance, instance)
+    }
+
+    @Test
+    fun testNotEqualsNull() {
+        val codePoint = pickNonBMPCodepoint()
+        val instance = WideChar(codePoint)
+        val message = "$instance should not be equal to null"
+        assertFalse(instance.equals(null), message)
     }
 
 }
