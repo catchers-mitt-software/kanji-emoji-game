@@ -24,9 +24,12 @@ object SurrogatesProcessor {
         return Pair(high, low)
     }
 
-    // TODO: Write tests for this
     fun reckonCodePoint(pair: Pair<Char, Char>): Int {
-        return -1
+        val array = charArrayOf(pair.first, pair.second)
+        val highPart = (pair.first - MINIMUM_HIGH_SURROGATE) shl 10
+        val lowPart = MINIMUM_SUPPLEMENTARY +
+                (pair.second - MINIMUM_LOW_SURROGATE)
+        return highPart + lowPart
     }
 
     // TODO: Write tests for this
