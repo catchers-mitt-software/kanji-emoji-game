@@ -25,7 +25,6 @@ object SurrogatesProcessor {
     }
 
     fun reckonCodePoint(pair: Pair<Char, Char>): Int {
-        val array = charArrayOf(pair.first, pair.second)
         val highPart = (pair.first - MINIMUM_HIGH_SURROGATE) shl 10
         val lowPart = MINIMUM_SUPPLEMENTARY +
                 (pair.second - MINIMUM_LOW_SURROGATE)
