@@ -26,7 +26,7 @@ class WideChar(val codePoint: Int) {
 
     constructor(ch: Char) : this(ch.code)
 
-    // TODO: Write tests for this
-    constructor(pair: Pair<Char, Char>) : this(0x10001)
+    constructor(pair: Pair<Char, Char>)
+            : this(SurrogatesProcessor.reckonCodePoint(pair))
 
 }
