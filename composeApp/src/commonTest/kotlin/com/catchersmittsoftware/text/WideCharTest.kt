@@ -23,6 +23,12 @@ class WideCharTest {
         return surrogates.concatToString()
     }
 
+    private fun chooseHighSurrogate(): Char =
+        Random.nextInt(0xD83C, 0xD83F).toChar()
+
+    private fun chooseLowSurrogate(): Char =
+        Random.nextInt(0xDE00, 0xDF00).toChar()
+
     @Test
     fun testToStringAuxConstructor() {
         val ch = pickBMPKanji()
