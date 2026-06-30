@@ -86,4 +86,14 @@ class WideCharTest {
         assertFalse(instanceA.equals(instanceB), message)
     }
 
+    @Test
+    fun testNotEqualsDiffChar() {
+        val characterA = pickBMPKanji()
+        val characterB = characterA + 1
+        val instanceA = WideChar(characterA)
+        val instanceB = WideChar(characterB)
+        val message = "$instanceA should not equal $instanceB"
+        assertFalse(instanceA.equals(instanceB), message)
+    }
+
 }
