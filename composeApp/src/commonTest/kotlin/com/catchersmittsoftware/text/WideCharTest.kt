@@ -51,4 +51,11 @@ class WideCharTest {
         assertEquals(expected, actual)
     }
 
+    @Test
+    fun testReferentialEquality() {
+        val codePoint = pickNonBMPCodepoint()
+        val instance = WideChar(codePoint)
+        assertEquals(instance, instance)
+    }
+
 }
