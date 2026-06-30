@@ -68,4 +68,12 @@ class WideCharTest {
         assertFalse(instance.equals(null), message)
     }
 
+    @Test
+    fun testNotEqualsDiffClass() {
+        val codePoint = pickNonBMPCodepoint()
+        val instance = WideChar(codePoint)
+        val message = "$instance should not be equal to instance of other class"
+        assertFalse(instance.equals(this), message)
+    }
+
 }
