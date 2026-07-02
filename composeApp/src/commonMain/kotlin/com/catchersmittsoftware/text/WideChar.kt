@@ -1,7 +1,6 @@
 package com.catchersmittsoftware.text
 
-// TODO: Convert to data class after all tests are passing
-class WideChar(val codePoint: Int) {
+data class WideChar(val codePoint: Int) {
 
     override fun toString(): String {
         if (this.codePoint < 0x10000) {
@@ -12,18 +11,6 @@ class WideChar(val codePoint: Int) {
             val surrogates = charArrayOf(high, low)
             return surrogates.concatToString()
         }
-    }
-
-    override fun equals(other: Any?): Boolean {
-        return if (other is WideChar) {
-            this.codePoint == other.codePoint
-        } else {
-            false
-        }
-    }
-
-    override fun hashCode(): Int {
-        return this.codePoint shl 12
     }
 
     constructor(ch: Char) : this(ch.code)
