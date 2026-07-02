@@ -181,4 +181,21 @@ class WideCharTest {
         assertEquals(someChar, sameChar, message)
     }
 
+    @Test
+    fun testHashCode() {
+        val capacity = Random.nextInt(128, 256)
+        val characters = mutableSetOf<WideChar>()
+        val hashes = mutableSetOf<Int>()
+        for (i in 1 .. capacity) {
+            val codePoint = pickNonBMPCodepoint()
+            val instance = WideChar(codePoint)
+            characters.add(instance)
+            hashes.add(instance.hashCode())
+        }
+        val expected = characters.size
+        val actual = hashes.size
+        val message = "Set of $expected chars should have as many hash codes"
+        assertEquals(expected, actual, message)
+    }
+
 }
