@@ -22,9 +22,8 @@ class WideChar(val codePoint: Int) {
         }
     }
 
-    // TODO: Write tests for this
     override fun hashCode(): Int {
-        return Int.MAX_VALUE
+        return this.codePoint shl 12
     }
 
     constructor(ch: Char) : this(ch.code)
