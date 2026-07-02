@@ -148,4 +148,15 @@ class WideCharTest {
         assertEquals(someChar, sameChar, message)
     }
 
+    @Test
+    fun testEqualsSamePair() {
+        val high = chooseHighSurrogate()
+        val low = chooseLowSurrogate()
+        val pair = Pair(high, low)
+        val someChar = WideChar(pair)
+        val sameChar = WideChar(pair)
+        val message = "$someChar should equal $sameChar"
+        assertEquals(someChar, sameChar, message)
+    }
+
 }
