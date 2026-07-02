@@ -130,4 +130,13 @@ class WideCharTest {
         assertNotEquals(instanceA, instanceB, message)
     }
 
+    @Test
+    fun testEquals() {
+        val codePoint = pickNonBMPCodepoint()
+        val someChar = WideChar(codePoint)
+        val sameChar = WideChar(codePoint)
+        val message = "$someChar should equal $sameChar"
+        assertEquals(someChar, sameChar, message)
+    }
+
 }
