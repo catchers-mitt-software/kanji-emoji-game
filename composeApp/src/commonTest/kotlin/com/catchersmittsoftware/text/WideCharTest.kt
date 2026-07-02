@@ -139,4 +139,13 @@ class WideCharTest {
         assertEquals(someChar, sameChar, message)
     }
 
+    @Test
+    fun testEqualsSameChar() {
+        val ch = pickBMPKanji()
+        val someChar = WideChar(ch)
+        val sameChar = WideChar(ch)
+        val message = "$someChar should equal $sameChar"
+        assertEquals(someChar, sameChar, message)
+    }
+
 }
