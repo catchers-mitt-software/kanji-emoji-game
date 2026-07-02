@@ -102,4 +102,18 @@ class WideCharTest {
         assertFalse(instanceA.equals(instanceB), message)
     }
 
+    @Test
+    fun testNotEqualsDiffHighSurr() {
+        val highA = chooseHighSurrogate()
+        val highB = highA + 1
+        val low = chooseLowSurrogate()
+        val pairA = Pair(highA, low)
+        val pairB = Pair(highB, low)
+        val instanceA = WideChar(pairA)
+        val instanceB = WideChar(pairB)
+        val message =
+            "$instanceA from $pairA should not equal $instanceB from $pairB"
+        assertFalse(instanceA.equals(instanceB), message)
+    }
+
 }
