@@ -15,10 +15,10 @@ class WideChar(val codePoint: Int) {
     }
 
     override fun equals(other: Any?): Boolean {
-        if (other is WideChar) {
-            return this.codePoint == other.codePoint
+        return if (other is WideChar) {
+            this.codePoint == other.codePoint
         } else {
-            return false
+            false
         }
     }
 
