@@ -169,4 +169,16 @@ class WideCharTest {
         assertEquals(someChar, sameChar, message)
     }
 
+    @Test
+    fun testEqualsPrimaryConstructorPairAuxConstructor() {
+        val high = chooseHighSurrogate()
+        val low = chooseLowSurrogate()
+        val pair = Pair(high, low)
+        val codePoint = SurrogatesProcessor.reckonCodePoint(pair)
+        val someChar = WideChar(codePoint)
+        val sameChar = WideChar(pair)
+        val message = "$someChar should equal $sameChar"
+        assertEquals(someChar, sameChar, message)
+    }
+
 }
