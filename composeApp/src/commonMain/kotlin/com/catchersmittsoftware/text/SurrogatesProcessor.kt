@@ -31,9 +31,8 @@ object SurrogatesProcessor {
         return highPart + lowPart
     }
 
-    // TODO: Write tests for this
     fun assembleFromSurrogates(pair: Pair<Char, Char>): WideChar {
-        return WideChar(0x10002)
+        return WideChar(pair)
     }
 
 }
