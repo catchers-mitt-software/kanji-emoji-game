@@ -104,4 +104,15 @@ class SurrogatesProcessorTest {
         assertEquals(expected, actual, message)
     }
 
+    @Test
+    fun testAssembleFromSurrogates() {
+        val codePoint = chooseNonBMPCodePoint()
+        val high = reckonHighSurrogate(codePoint)
+        val low = reckonLowSurrogate(codePoint)
+        val pair = Pair(high, low)
+        val expected = WideChar(codePoint)
+        val actual = SurrogatesProcessor.assembleFromSurrogates(pair)
+        assertEquals(expected, actual)
+    }
+
 }
