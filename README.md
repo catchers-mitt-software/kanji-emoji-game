@@ -21,6 +21,15 @@ slow, and being slow with frequent mistakes scores poorly. Something like that.
 
 Many thanks to Shiva Thapa for his help with the app's colors in the theme.
 
+## Kotlin Multiplatform issues
+
+Holy complexity. All of a sudden in July 2026, Kotlin Multiplatform started 
+having new problems with Gradle. From 
+https://kotlinlang.org/docs/multiplatform/multiplatform-project-agp-9-migration.html#enabling-the-legacy-apis-until-agp-10 
+I copied a short-term fix for gradle.properties, but a more thoroughgoing 
+project restructuring might be necessary when Android Gradle Plugin 10 comes 
+out.
+
 The following below the line is from the Kotlin Multiplatform quickstart.
 
 ----
