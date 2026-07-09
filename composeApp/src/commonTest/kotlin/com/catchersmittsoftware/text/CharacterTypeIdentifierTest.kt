@@ -156,4 +156,11 @@ class CharacterTypeIdentifierTest {
         assertFalse(isCJKIdeographic(ch), message)
     }
 
+    @Test
+    fun testKoreanStandardSymbolIsNotCJKIdeographic() {
+        val ch = '\u327F'
+        val message = "Character $ch should not be CJK ideograph"
+        assertFalse(isCJKIdeographic(ch), message)
+    }
+
 }
