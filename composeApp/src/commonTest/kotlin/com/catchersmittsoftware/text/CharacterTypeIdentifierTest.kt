@@ -178,4 +178,11 @@ class CharacterTypeIdentifierTest {
         }
     }
 
+    @Test
+    fun testCircledKatakanaAreNotCJKIdeographic() {
+        val ch: Char = ('\u32D0'..'\u32FE').random()
+        val message = "Character '$ch' should not be CJK ideograph"
+        assertFalse(isCJKIdeographic(ch), message)
+    }
+
 }
