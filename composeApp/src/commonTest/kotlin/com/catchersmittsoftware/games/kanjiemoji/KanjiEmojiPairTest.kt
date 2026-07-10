@@ -5,6 +5,7 @@ import com.catchersmittsoftware.text.WideChar
 
 import kotlin.test.Test
 import kotlin.test.assertEquals
+import kotlin.test.assertTrue
 
 class KanjiEmojiPairTest {
 
@@ -31,6 +32,17 @@ class KanjiEmojiPairTest {
             return propChar
         }
 
+    }
+
+    @Test
+    fun testToString() {
+        val kanji = chooseKanji()
+        val emoji = chooseEmoji()
+        val instance = KanjiEmojiPair(kanji, emoji)
+        val actual = instance.toString()
+        val message = "\"$actual\" should contain '$kanji' and '$emoji'"
+        assertTrue(actual.contains(kanji), message)
+        assertTrue(actual.contains(emoji.toString()), message)
     }
 
 }
