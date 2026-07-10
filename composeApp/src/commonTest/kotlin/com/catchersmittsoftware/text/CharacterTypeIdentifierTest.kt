@@ -185,4 +185,11 @@ class CharacterTypeIdentifierTest {
         assertFalse(isCJKIdeographic(ch), message)
     }
 
+    @Test
+    fun testReiwaEraNameIsCJKIdeographic() {
+        val ch = '\u32FF'
+        val message = "Character '$ch' should be CJK ideograph"
+        assertTrue(isCJKIdeographic(ch), message)
+    }
+
 }
