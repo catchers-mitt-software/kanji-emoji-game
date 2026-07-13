@@ -65,4 +65,13 @@ class KanjiEmojiPairTest {
         assertFalse(instance.equals(other), message)
     }
 
+    @Test
+    fun testNotEqualsDiffClass() {
+        val kanji = chooseKanji()
+        val emoji = chooseEmoji()
+        val instance = KanjiEmojiPair(kanji, emoji)
+        val message = "$instance should not equal $this"
+        assertFalse(instance.equals(this), message)
+    }
+
 }
