@@ -8,7 +8,7 @@ class KanjiEmojiPair(val kanji: Char, val emoji: WideChar) {
     override fun toString(): String = "($kanji, $emoji)"
 
     // TODO: Write tests for this
-    override fun equals(other: Any?): Boolean = this === other
+    override fun equals(other: Any?): Boolean = true
 
     // TODO: Write tests for this
     override fun hashCode(): Int = 0
