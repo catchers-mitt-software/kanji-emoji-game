@@ -45,4 +45,13 @@ class KanjiEmojiPairTest {
         assertTrue(actual.contains(emoji.toString()), message)
     }
 
+    @Test
+    fun testReferentialEquality() {
+        val kanji = chooseKanji()
+        val emoji = chooseEmoji()
+        val instance = KanjiEmojiPair(kanji, emoji)
+        val message = "$instance should be equal to itself"
+        assertTrue(instance.equals(instance), message)
+    }
+
 }
