@@ -1,10 +1,8 @@
 package com.catchersmittsoftware.games.kanjiemoji
 
-import com.catchersmittsoftware.text.SurrogatesProcessor
 import com.catchersmittsoftware.text.WideChar
 
 import kotlin.test.Test
-import kotlin.test.assertEquals
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
@@ -72,6 +70,17 @@ class KanjiEmojiPairTest {
         val instance = KanjiEmojiPair(kanji, emoji)
         val message = "$instance should not equal $this"
         assertFalse(instance.equals(this), message)
+    }
+
+    @Test
+    fun testNotEqualsDiffKanji() {
+        val kanjiA = chooseKanji()
+        val kanjiB = chooseDiffKanji(kanjiA)
+        val emoji = chooseEmoji()
+        val pairA = KanjiEmojiPair(kanjiA, emoji)
+        val pairB = KanjiEmojiPair(kanjiB, emoji)
+        val message = "$pairA should not equal $pairB"
+        assertFalse(pairA.equals(pairB), message)
     }
 
 }
