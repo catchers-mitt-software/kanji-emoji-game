@@ -5,6 +5,7 @@ import com.catchersmittsoftware.text.WideChar
 
 import kotlin.test.Test
 import kotlin.test.assertEquals
+import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
 class KanjiEmojiPairTest {
@@ -52,6 +53,16 @@ class KanjiEmojiPairTest {
         val instance = KanjiEmojiPair(kanji, emoji)
         val message = "$instance should be equal to itself"
         assertTrue(instance.equals(instance), message)
+    }
+
+    @Test
+    fun testNotEqualsNull() {
+        val kanji = chooseKanji()
+        val emoji = chooseEmoji()
+        val instance = KanjiEmojiPair(kanji, emoji)
+        val other = null
+        val message = "$instance should not equal null"
+        assertFalse(instance.equals(other), message)
     }
 
 }
