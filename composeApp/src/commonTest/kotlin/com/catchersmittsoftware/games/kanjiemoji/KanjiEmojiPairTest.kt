@@ -2,6 +2,7 @@ package com.catchersmittsoftware.games.kanjiemoji
 
 import com.catchersmittsoftware.text.WideChar
 
+import kotlin.random.Random
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFalse
@@ -102,6 +103,24 @@ class KanjiEmojiPairTest {
         val expected = KanjiEmojiPair(kanji, emoji)
         val actual = KanjiEmojiPair(kanji, emoji)
         val message = "$expected should equal $actual"
+        assertEquals(expected, actual, message)
+    }
+
+    @Test
+    fun testHashCode() {
+        val capacity = Random.nextInt(128, 256)
+        val pairs = mutableSetOf<KanjiEmojiPair>()
+        val hashes = mutableSetOf<Int>()
+        for (i in 1 .. capacity) {
+            val kanji = chooseKanji()
+            val emoji = chooseEmoji()
+            val instance = KanjiEmojiPair(kanji, emoji)
+            pairs.add(instance)
+            hashes.add(instance.hashCode())
+        }
+        val expected = pairs.size
+        val actual = hashes.size
+        val message = "Set of $expected chars should have as many hash codes"
         assertEquals(expected, actual, message)
     }
 
