@@ -13,7 +13,6 @@ class KanjiEmojiPair(val kanji: Char, val emoji: WideChar) {
         return false
     }
 
-    // TODO: Write tests for this
-    override fun hashCode(): Int = 0
+    override fun hashCode(): Int = (kanji.hashCode() shl 16) + emoji.hashCode()
     
 }
