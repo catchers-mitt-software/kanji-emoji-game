@@ -13,6 +13,16 @@ class CharPlusVarSelTest {
 
     @Test
     fun testToString() {
+        val character = WideChar(chooseBMPMiscSymbol())
+        val selector = 0x0F.toByte()
+        val instance = CharPlusVarSel(character, selector)
+        val expected = character.toString() + (0xFE00 + selector).toChar()
+        val actual = instance.toString()
+        assertEquals(expected, actual)
+    }
+
+    @Test
+    fun testToStringAuxConstructor() {
         val character = chooseBMPMiscSymbol()
         val selector = 0x0F.toByte()
         val instance = CharPlusVarSel(character, selector)
@@ -21,7 +31,5 @@ class CharPlusVarSelTest {
         val actual = instance.toString()
         assertEquals(expected, actual)
     }
-
-    // TODO: Write toString() test for aux constructor
 
 }
