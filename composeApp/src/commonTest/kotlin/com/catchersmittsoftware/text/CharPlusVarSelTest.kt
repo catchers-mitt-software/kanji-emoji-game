@@ -1,11 +1,8 @@
 package com.catchersmittsoftware.text
 
 import kotlin.random.Random
-import kotlin.random.nextInt
 import kotlin.test.Test
 import kotlin.test.assertEquals
-import kotlin.test.assertFalse
-import kotlin.test.assertNotEquals
 
 class CharPlusVarSelTest {
 
@@ -13,6 +10,17 @@ class CharPlusVarSelTest {
         Random.nextInt(0x2600, 0x2700).toChar()
 
     private fun chooseVarSel(): Byte = Random.nextInt(0x10).toByte()
+
+    @Test
+    fun testToString() {
+        val character = chooseBMPMiscSymbol()
+        val selector = 0x0F.toByte()
+        val instance = CharPlusVarSel(character, selector)
+        val array = charArrayOf(character, (0xFE00 + selector).toChar())
+        val expected = array.concatToString()
+        val actual = instance.toString()
+        assertEquals(expected, actual)
+    }
 
     // TODO: Write toString() test for aux constructor
 
