@@ -192,4 +192,12 @@ class CharacterTypeIdentifierTest {
         assertTrue(isCJKIdeographic(ch), message)
     }
 
+    @Test
+    fun testSquaredKatakanaWordsAreNotCJKIdeographic() {
+        for (ch in '\u3300' .. '\u3357') {
+            val message = "Character '$ch' should not be CJK ideograph"
+            assertFalse(isCJKIdeographic(ch), message)
+        }
+    }
+
 }
