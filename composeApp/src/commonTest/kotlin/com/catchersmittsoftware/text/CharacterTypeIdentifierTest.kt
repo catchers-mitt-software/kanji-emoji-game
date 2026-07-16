@@ -200,4 +200,12 @@ class CharacterTypeIdentifierTest {
         }
     }
 
+    @Test
+    fun testTelegraphHourSymbolsAreCJKIdeographic() {
+        for (ch in '\u3358' .. '\u3370') {
+            val message = "Character '$ch' should be CJK ideograph"
+            assertTrue(isCJKIdeographic(ch), message)
+        }
+    }
+
 }
