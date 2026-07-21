@@ -208,4 +208,12 @@ class CharacterTypeIdentifierTest {
         }
     }
 
+    @Test
+    fun testMoreSquaredLatinAbbreviationsAreNotCJKIdeographic() {
+        for (ch in '\u3371' .. '\u337A') {
+            val message = "Character '$ch' should not be CJK ideograph"
+            assertFalse(isCJKIdeographic(ch), message)
+        }
+    }
+
 }
