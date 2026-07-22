@@ -1,5 +1,12 @@
 # Kanji Emoji Game
 
+NOTE TO SELF, 22 July 2026: Run tests of commonMain (commonTest) on JVM rather 
+than the local Android simulator. This is probably kicking the can down the 
+road, but for the time being I just don't feel like dealing with a seemingly 
+non-stop stream of Gradle headaches.
+
+----
+
 WORK IN PROGRESS
 
 Like those matching games, but matching "cognates" rather than two instances of 
