@@ -224,4 +224,11 @@ class CharacterTypeIdentifierTest {
         }
     }
 
+    @Test
+    fun testSquareCorporationIsCJKIdeographic() {
+        val ch = '\u337F'
+        val message = "Character '$ch' should be CJK ideographic"
+        assertTrue(isCJKIdeographic(ch), message)
+    }
+
 }
