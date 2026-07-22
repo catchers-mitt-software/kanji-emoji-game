@@ -5,7 +5,7 @@ fun isCJKIdeographic(ch: Char): Boolean {
     return if (ch in '\u3220'..'\u3247') {
         true
     } else (ch in ('\u3280'..<'\u32CC')) || (ch == '\u32FF') ||
-            (ch in ('\u3358' .. '\u3370')) || (ch in ('\u337B' .. '\u337E')) ||
+            (ch in ('\u3358' .. '\u3370')) || (ch in ('\u337B' .. '\u33DF')) ||
             (ch > '\u4DFF')
 }
 
