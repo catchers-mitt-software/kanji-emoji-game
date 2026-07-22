@@ -216,4 +216,12 @@ class CharacterTypeIdentifierTest {
         }
     }
 
+    @Test
+    fun testJapaneseEraNamesAreCJKIdeographic() {
+        for (ch in '\u337B' .. '\u337E') {
+            val message = "Character '$ch' should be CJK ideographic"
+            assertTrue(isCJKIdeographic(ch), message)
+        }
+    }
+
 }
